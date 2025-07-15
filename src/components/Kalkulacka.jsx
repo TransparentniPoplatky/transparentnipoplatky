@@ -1,19 +1,18 @@
-// src/components/InvestmentCalculator.js
 import React, { useState, useMemo, useEffect } from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
   BarElement,
-  Title, // Přidáno Title pro název grafu
+  Title,
   Tooltip,
   Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend); // Registrace Title
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
-// Helper function to format numbers as Kč
+// Helper pro Kč
 const formatCurrency = (value) => {
   return new Intl.NumberFormat('cs-CZ', {
     style: 'currency',
@@ -38,7 +37,7 @@ export default function InvestmentCalculator() {
     totalWithFees,
     totalEntryFee,
     totalAnnualFees,
-    chartDatasets, // Změněno na chartDatasets pro flexibilnější data
+    chartDatasets, 
   } = useMemo(() => {
     const months = years * 12;
     const monthlyReturnRate = (annualReturn / 100) / 12; // Měsíční výnosová sazba
@@ -99,15 +98,15 @@ export default function InvestmentCalculator() {
         {
           label: "Vložený kapitál",
           data: [totalCapitalInvested, totalCapitalInvested, totalCapitalInvested],
-          backgroundColor: "rgba(168, 85, 247, 1)", // purple-400
-          stack: 'Stack 0', // Všechny se skládají na sebe ve stejné kategorii
+          backgroundColor: "rgba(168, 85, 247, 1)", 
+          stack: 'Stack 0', 
           borderColor: "rgba(168, 85, 247, 1)",
           borderWidth: 1,
         },
         {
           label: "Zisk bez poplatků",
           data: [0, Math.max(0, pureYieldWithoutFees), 0], // Jen pro "Hodnotu bez poplatků"
-          backgroundColor: "rgba(34, 197, 94, 0.8)", // green-500
+          backgroundColor: "rgba(34, 197, 94, 0.8)", 
           stack: 'Stack 0',
           borderColor: "rgba(34, 197, 94, 1)",
           borderWidth: 1,
@@ -115,7 +114,7 @@ export default function InvestmentCalculator() {
         {
           label: "Zaplacené poplatky",
           data: [0, 0, Math.max(0, currentEntryFee + totalAnnualFeesAcc)], // Jen pro "Hodnotu s poplatky"
-          backgroundColor: "rgba(239, 68, 68, 0.8)", // red-500
+          backgroundColor: "rgba(239, 68, 68, 0.8)", 
           stack: 'Stack 0',
           borderColor: "rgba(239, 68, 68, 1)",
           borderWidth: 1,
@@ -123,7 +122,7 @@ export default function InvestmentCalculator() {
         {
           label: "Zisk s poplatky",
           data: [0, 0, Math.max(0, pureYieldWithFees)], // Jen pro "Hodnotu s poplatky"
-          backgroundColor: "rgba(34, 197, 94, 0.8)", // green-500
+          backgroundColor: "rgba(34, 197, 94, 0.8)", 
           stack: 'Stack 0',
           borderColor: "rgba(34, 197, 94, 1)",
           borderWidth: 1,
@@ -167,13 +166,13 @@ export default function InvestmentCalculator() {
         display: true,
         position: 'bottom', // Legenda dole pro více místa
         labels: {
-          color: 'rgb(55, 65, 81)', // gray-700
+          color: 'rgb(55, 65, 81)', 
         }
       },
       title: {
         display: true,
         text: 'Porovnání investičních scénářů',
-        color: 'rgb(31, 41, 55)', // gray-900
+        color: 'rgb(31, 41, 55)', 
         font: {
           size: 18,
           weight: 'bold'

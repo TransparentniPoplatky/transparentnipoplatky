@@ -18,7 +18,7 @@ export default function Footer() {
         {/* Social Media Icons */}
         <div className="flex space-x-6">
           <a
-            href="https://www.threads.net/@vas_threads_profil"
+            href="https://www.threads.com/@transparentnipoplatky?igshid=NTc4MTIwNjQ2YQ=="
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-600 hover:text-indigo-600 transition-colors duration-200"
@@ -27,7 +27,7 @@ export default function Footer() {
             <SiThreads className="w-6 h-6" /> 
           </a>
           <a
-            href="https://www.instagram.com/vas_instagram_profil"
+            href="https://www.instagram.com/transparentnipoplatky?igsh=MTFucHBrand6cjJybg%3D%3D&utm_source=qr"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-600 hover:text-indigo-600 transition-colors duration-200"
@@ -36,7 +36,7 @@ export default function Footer() {
             <FaInstagram className="w-6 h-6" />
           </a>
           <a
-            href="https://github.com/vas_github_profil"
+            href="https://github.com/TransparentniPoplatky/transparentnipoplatky"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-600 hover:text-indigo-600 transition-colors duration-200"

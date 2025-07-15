@@ -16,8 +16,11 @@ export default function StoriesPage() {
     <div className="max-w-4xl mx-auto px-6 py-12">
       <h1 className="text-4xl font-bold text-indigo-900 mb-8">Příběhy lidí</h1>
       <p className="mb-6 text-lg text-gray-700">
-        Skutečné zkušenosti lidí, kteří narazili na neférové praktiky.
+        Skutečné zkušenosti lidí, kteří narazili na neférové praktiky, byli nečestně informováni o investičních poplatcích nebo se jinak spálili. Tyto příběhy nám pomáhají lépe pochopit, jaké problémy mohou nastat a proč je důležité být obezřetný při výběru investic.
       </p>
+     <strong> <p className="mb-6 text-lg text-gray-700">
+        Zatím jsou příběhy jen automaticky vygenerované, abych zaplnil prostor a otestoval, jak to vypadá. Brzy přidám skutečné příběhy lidí, kteří se podělí o své zkušenosti.
+      </p></strong>
 
       <div className="space-y-6">
         {currentStories.map((story) => (
@@ -61,7 +64,7 @@ export default function StoriesPage() {
           Máte podobnou zkušenost? Pošlete nám svůj příběh přes Instagram nebo e-mail.
         </h3>
         <a
-          href="https://www.instagram.com/transparentnipoplatky"
+          href="https://www.instagram.com/transparentnipoplatky?igsh=MTFucHBrand6cjJybg%3D%3D&utm_source=qr"
           className="inline-block bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-indigo-700 transition"
           target="_blank"
           rel="noopener noreferrer"
