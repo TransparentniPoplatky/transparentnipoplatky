@@ -3,17 +3,17 @@ import { Link } from "react-router-dom";
 
 export default function LandingPage() {
   return (
-    <div className=" text-gray-800 flex flex-col min-h-[calc(100vh-8rem)] px-6 py-12 max-w-4xl mx-auto">
-      <section className="text-center py-20 bg-gradient-to-b from-indigo-50 to-white rounded-lg shadow-md">
-        <h1 className="text-5xl font-extrabold text-indigo-900 mb-6">
+<div className=" text-gray-800 flex flex-col min-h-[calc(100vh-8rem)] px-6 py-6 sm:px-6 sm:py-12 max-w-4xl mx-auto">
+      <section className="text-center py-10 sm:py-20 bg-gradient-to-b from-indigo-50 to-white rounded-lg shadow-md">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-indigo-900 mb-4 sm:mb-6">
           Co jsou Transparentní Poplatky?
         </h1>
-        <p className="max-w-xl mx-auto text-indigo-700 text-lg mb-10">
+        <p className="max-w-xl mx-auto text-base sm:text-lg mb-6 sm:mb-10 px-4">
           Pomáháme lidem odhalit skryté poplatky a informovat o nekalých praktikách v investování. Naše nástroje vám umožní lépe porozumět nákladům na investice a učinit informovaná rozhodnutí.
         </p>
         <Link
           to="/o-projektu"
-          className="inline-block bg-indigo-600 text-white px-8 py-4 rounded-full text-xl font-semibold shadow-lg hover:bg-indigo-700 transition"
+          className="inline-block bg-indigo-600 text-white px-6 py-3 rounded-full text-base font-semibold shadow-lg hover:bg-indigo-700 transition"
         >
           Více o projektu
         </Link>

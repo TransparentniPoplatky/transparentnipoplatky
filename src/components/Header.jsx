@@ -75,7 +75,7 @@ export default function Header() {
             Domů
           </Link>
           <Link
-            to="/kalkulacka"
+            to="/kalkulacky"
             className="block px-6 py-3 text-blue-600 font-semibold hover:bg-gray-100"
             onClick={() => setMobileOpen(false)}
           >
@@ -87,6 +87,13 @@ export default function Header() {
             onClick={() => setMobileOpen(false)}
           >
             Příběhy
+          </Link>
+                    <Link
+            to="/o-projektu"
+            className="block px-6 py-3 text-blue-600 font-semibold hover:bg-gray-100"
+            onClick={() => setMobileOpen(false)}
+          >
+            O projektu
           </Link>
         </nav>
       )}
