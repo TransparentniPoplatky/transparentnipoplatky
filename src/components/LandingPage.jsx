@@ -61,7 +61,7 @@ export default function LandingPage() {
             </svg>
           </div>
           <div className="ml-3">
-            <h3 className="text-sm font-medium text-indigo-800">Upozornění k práci sinformacemi na stránce</h3>
+            <h3 className="text-sm font-medium text-indigo-800">Upozornění k práci sinformacemi na stránce!</h3>
           </div>
         </div>
         <div className="mt-2 text-sm text-indigo-700">
