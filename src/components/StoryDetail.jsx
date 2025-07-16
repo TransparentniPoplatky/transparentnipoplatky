@@ -10,7 +10,7 @@ export default function StoryDetail() {
   if (!story) {
     return (
       <div className="max-w-3xl mx-auto py-12 px-6 text-center">
-        <h1 className="text-2xl font-bold text-red-600 mb-4">Příběh nebyl nalezen!</h1>
+        <h1 className="text-2xl font-bold text-red-600 mb-4">Příběh nebyl nalezen</h1>
         <Link to="/pribehy" className="text-indigo-600 underline">
           Zpět na přehled
         </Link>
