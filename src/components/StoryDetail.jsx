@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import stories from "../data/storiesData";
@@ -20,7 +21,15 @@ export default function StoryDetail() {
   return (
     <div className="max-w-3xl mx-auto py-12 px-6">
       <h1 className="text-3xl font-bold text-indigo-900 mb-4">{story.title}</h1>
-      <p className="text-gray-700 leading-relaxed mb-8 whitespace-pre-line">{story.content}</p>
+      <div className="text-gray-700 leading-relaxed mb-8">
+        {story.content.map((paragraph, index) => (
+          <p
+            key={index}
+            className={index < story.content.length - 1 ? "mb-4" : ""}
+            dangerouslySetInnerHTML={{ __html: paragraph }}
+          />
+        ))}
+      </div>
       <Link to="/pribehy" className="text-indigo-600 underline">
         ← Zpět na všechny příběhy
       </Link>

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import stories from "../data/storiesData";
 
 const STORIES_PER_PAGE = 5;
+const PREVIEW_CHAR_LIMIT = 280; 
 
 export default function StoriesPage() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -19,26 +20,37 @@ export default function StoriesPage() {
         Skutečné zkušenosti lidí, kteří narazili na neférové praktiky, byli nečestně informováni o investičních poplatcích nebo se jinak spálili. Tyto příběhy nám pomáhají lépe pochopit, jaké problémy mohou nastat a proč je důležité být obezřetný při výběru investic.
       </p>
      <strong> <p className="mb-6 text-lg text-gray-700">
-        Zatím jsou příběhy jen automaticky vygenerované, abych zaplnil prostor a otestoval, jak to vypadá. Brzy přidám skutečné příběhy lidí, kteří se podělí o své zkušenosti.
+        Zatím je tu jen můj příběh a budu přidávat zkušenosti mých známých, případně lidí, jejichž příběhy jsem našel různě v diskuzích. Rád bych ale co nejdříve začal publikovat vaše autentické a různé zkušennosti. Tak se ozvěte!
       </p></strong>
 
       <div className="space-y-6">
-        {currentStories.map((story) => (
-          <div key={story.id} className="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded">
-            <h2 className="text-xl font-semibold text-indigo-800 mb-2">{story.title}</h2>
-            <p className="text-gray-700">
-              {story.content.length > 150
-                ? story.content.slice(0, 150) + "..."
-                : story.content}
-            </p>
-            <Link
-              to={`/pribehy/${story.id}`}
-              className="mt-2 inline-block text-sm text-indigo-600 hover:underline"
-            >
-              Zobrazit celý příběh
-            </Link>
-          </div>
-        ))}
+        {currentStories.map((story) => {
+          // Získáme pouze první odstavec pro náhled
+          const firstParagraph = story.content[0];
+          let previewText = firstParagraph;
+          let needsMoreLink = false;
+
+          // Pokud je první odstavec delší než limit, zkrátíme ho a přidáme "..."
+          if (firstParagraph.length > PREVIEW_CHAR_LIMIT) {
+            previewText = firstParagraph.slice(0, PREVIEW_CHAR_LIMIT) + "...";
+            needsMoreLink = true; 
+          }
+
+          return (
+            <div key={story.id} className="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded">
+              <h2 className="text-xl font-semibold text-indigo-800 mb-2">{story.title}</h2>
+              {/* Použijeme dangerouslySetInnerHTML pro zobrazení zkráceného textu */}
+              <p className="text-gray-700" dangerouslySetInnerHTML={{ __html: previewText }} />
+              
+              <Link
+                to={`/pribehy/${story.id}`}
+                className="mt-2 inline-block text-sm text-indigo-600 hover:underline"
+              >
+                Zobrazit celý příběh
+              </Link>
+            </div>
+          );
+        })}
       </div>
 
       {/* Pagination */}

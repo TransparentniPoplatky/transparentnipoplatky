@@ -79,7 +79,7 @@ export default function Header() {
             className="block px-6 py-3 text-blue-600 font-semibold hover:bg-gray-100"
             onClick={() => setMobileOpen(false)}
           >
-            Kalkulačka
+            Kalkulačky
           </Link>
           <Link
             to="/pribehy"
